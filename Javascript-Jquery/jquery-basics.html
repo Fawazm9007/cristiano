@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click ME</button>
+    <div id="box" style="width: 500px; height:500px; background-color: red;"></div>
+    <input type="text" name="" id="char-check">
+    <label  for="" id="error" style="display: none;">Enter minimum 4 characters</label>
+    <input type="text" name="" id="">
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <Script>
+
+
+    // writing a code using jquery
+    // alert function
+
+    $(document).ready(function(){
+        $("#btn").click(function(){
+            // alert("Come on")
+    // if hide() is used, once it is clicked the box will be hidden and it won't be able to display it again 
+            // $('#box').hide()
+    /* instead of hide(), if toggle() is used the box appears and disappears as it is clicked if a number is given inside 
+    then it will be hidden in animation according to the seconds in it (counted in milliseconds)*/ 
+            // $("#box").toggle(3000)
+    // fadetoggle is another animation
+            $("#box").fadeToggle(3000)
+        })
+    // mouseenter and mouseleave
+
+        $("#btn").mouseenter(function(){
+            $(this).css({"background" : "blue"})
+        })
+        $("#btn").mouseleave(function(){
+            $(this).css({"background":"white"})
+        })
+
+    })
+
+    //  length checking
+    // blur is the time when you are getting out of the box
+        $('#char-check').blur(function(){
+            var num = $(this).val()
+            if (num.length<4) {
+                // alert("Enter minimum 4 characters")
+                $('#error').show()
+            }else{
+                $('#error').hide()
+            }
+        })
+
+
+    
+    
+    </Script>
+</body>
+</html>
